@@ -1451,30 +1451,41 @@
           </div>
         </div>
 
-        <form class="contact-form reveal" action="https://formspree.io/f/your-form-id" method="POST">
+        <!-- Formspree success/error banners -->
+        <div data-fs-success style="display:none;background:rgba(45,98,31,0.18);border:1px solid rgba(45,98,31,0.5);border-radius:6px;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.9rem;color:#a8d5a2;">
+          ✓ Message sent! We'll be in touch within 2 hours.
+        </div>
+        <div data-fs-error style="display:none;background:rgba(180,50,50,0.12);border:1px solid rgba(180,50,50,0.35);border-radius:6px;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.9rem;color:#e09090;">
+          Something went wrong. Please try again or call us at <a href="tel:7278104816" style="color:var(--amber);">(727) 810-4816</a>.
+        </div>
+
+        <form id="abes-contact-form" class="contact-form reveal">
           <div class="form-row">
             <div class="form-group">
               <label>First Name</label>
-              <input type="text" name="first_name" placeholder="John" required />
+              <input type="text" name="first_name" placeholder="John" required data-fs-field />
+              <span data-fs-error="first_name" style="font-size:0.75rem;color:#e09090;margin-top:0.25rem;display:block;"></span>
             </div>
             <div class="form-group">
               <label>Last Name</label>
-              <input type="text" name="last_name" placeholder="Smith" required />
+              <input type="text" name="last_name" placeholder="Smith" required data-fs-field />
+              <span data-fs-error="last_name" style="font-size:0.75rem;color:#e09090;margin-top:0.25rem;display:block;"></span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Email</label>
-              <input type="email" name="email" placeholder="john@email.com" required />
+              <input type="email" name="email" placeholder="john@email.com" required data-fs-field />
+              <span data-fs-error="email" style="font-size:0.75rem;color:#e09090;margin-top:0.25rem;display:block;"></span>
             </div>
             <div class="form-group">
               <label>Phone</label>
-              <input type="tel" name="phone" placeholder="(555) 000-0000" />
+              <input type="tel" name="phone" placeholder="(555) 000-0000" data-fs-field />
             </div>
           </div>
           <div class="form-group">
             <label>Service Needed</label>
-            <select name="service">
+            <select name="service" data-fs-field>
               <option value="">Select a service…</option>
               <option>Junk Removal</option>
               <option>Estate Cleanout</option>
@@ -1489,12 +1500,19 @@
           </div>
           <div class="form-group">
             <label>Tell Us About Your Job</label>
-            <textarea name="message" placeholder="Describe what needs to go — size, location, any special considerations…"></textarea>
+            <textarea name="message" placeholder="Describe what needs to go — size, location, any special considerations…" data-fs-field></textarea>
+            <span data-fs-error="message" style="font-size:0.75rem;color:#e09090;margin-top:0.25rem;display:block;"></span>
           </div>
-          <button type="submit" class="btn-submit">
+          <button type="submit" class="btn-submit" data-fs-submit-btn>
             Send My Quote Request →
           </button>
         </form>
+
+        <script>
+          window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+          formspree('initForm', { formElement: '#abes-contact-form', formId: 'xnjorkap' });
+        </script>
+        <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
       </div>
     </div>
   </section>
