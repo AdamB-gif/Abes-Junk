@@ -62,6 +62,7 @@
     footer { background: rgba(4,5,4,0.98); border-top: 1px solid rgba(196,133,42,0.12); padding: 2.5rem 2rem; }
     .footer-bottom { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: rgba(160,152,136,0.5); flex-wrap: wrap; gap: 0.5rem; }
     .footer-bottom a { color: rgba(160,152,136,0.5); text-decoration: none; } .footer-bottom a:hover { color: var(--smoke); }
+    @media (max-width: 768px) { .nav-wordmark { display: none; } .nav-back { display: none; } .nav-phone { display: none; } }
     @media (max-width: 900px) { .items-grid { grid-template-columns: repeat(2, 1fr); } .other-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 580px) { .items-grid { grid-template-columns: 1fr; } .other-grid { grid-template-columns: 1fr; } .cta-block { padding: 2.5rem 1.5rem; } }
   </style>
@@ -71,7 +72,7 @@
     <a href="../index.html" class="nav-logo"><img src="../brand_assets/abes-logo.jpg" alt="Abe's Junk Solutions" /><div class="nav-wordmark">Abe's Junk Solutions<span>Pasco County, FL</span></div></a>
     <div class="nav-right">
       <a href="../index.html#services" class="nav-back">← All Services</a>
-      <a href="tel:7278104816" style="font-size:0.85rem;font-weight:600;color:var(--cream);text-decoration:none;">(727) 810-4816</a>
+      <a href="tel:7278104816" class="nav-phone" style="font-size:0.85rem;font-weight:600;color:var(--cream);text-decoration:none;">(727) 810-4816</a>
       <a href="../index.html#contact" class="nav-cta">Free Quote</a>
     </div>
   </div></nav>
