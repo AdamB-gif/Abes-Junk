@@ -2,3 +2,7 @@ node_modules/
 temporary screenshots/
 .vercel/
 *.log
+.vercel
+
+# Audit reports saved to the repo root during SEO reviews
+Overview - Abesjunksolutions.html

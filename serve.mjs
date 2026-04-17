@@ -12,6 +12,8 @@ const MIME = {
   '.js':   'application/javascript',
   '.mjs':  'application/javascript',
   '.json': 'application/json',
+  '.xml':  'application/xml',
+  '.txt':  'text/plain',
   '.png':  'image/png',
   '.jpg':  'image/jpeg',
   '.jpeg': 'image/jpeg',
@@ -21,12 +23,40 @@ const MIME = {
   '.woff': 'font/woff',
   '.woff2':'font/woff2',
   '.ttf':  'font/ttf',
+  '.webmanifest': 'application/manifest+json',
 };
 
+function resolveFile(urlPath) {
+  if (urlPath === '/' || urlPath === '') return path.join(__dirname, 'index.html');
+
+  const direct = path.join(__dirname, urlPath);
+  if (fs.existsSync(direct) && fs.statSync(direct).isFile()) return direct;
+
+  if (urlPath.endsWith('/')) {
+    const idx = path.join(__dirname, urlPath, 'index.html');
+    if (fs.existsSync(idx)) return idx;
+  }
+
+  if (!path.extname(urlPath)) {
+    const asHtml = path.join(__dirname, urlPath + '.html');
+    if (fs.existsSync(asHtml)) return asHtml;
+    const asDirIdx = path.join(__dirname, urlPath, 'index.html');
+    if (fs.existsSync(asDirIdx)) return asDirIdx;
+  }
+
+  return null;
+}
+
 http.createServer((req, res) => {
-  let urlPath = req.url.split('?')[0];
-  if (urlPath === '/') urlPath = '/index.html';
-  const filePath = path.join(__dirname, urlPath);
+  const urlPath = decodeURIComponent(req.url.split('?')[0].split('#')[0]);
+  const filePath = resolveFile(urlPath);
+
+  if (!filePath) {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('404 Not Found');
+    return;
+  }
+
   const ext = path.extname(filePath).toLowerCase();
   const contentType = MIME[ext] || 'application/octet-stream';
 
