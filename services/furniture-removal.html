@@ -188,6 +188,19 @@
     .btn-primary:hover { background: var(--amber-lt); transform: translateY(-2px); }
     .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 2rem; border: 1px solid rgba(196,133,42,0.3); color: var(--cream); font-weight: 500; font-size: 0.95rem; border-radius: 4px; text-decoration: none; transition: border-color 0.2s, background 0.2s, transform 0.15s; }
     .btn-ghost:hover { border-color: rgba(196,133,42,0.7); background: rgba(196,133,42,0.06); transform: translateY(-2px); }
+    /* FAQ */
+    .faq-block { margin-top: 5rem; }
+    .faq-block h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900; letter-spacing: -0.025em; color: var(--cream); margin-bottom: 2rem; }
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { background: rgba(196,133,42,0.04); border: 1px solid rgba(196,133,42,0.12); border-radius: 8px; overflow: hidden; transition: border-color 0.2s, background 0.2s; }
+    .faq-item[open] { border-color: rgba(196,133,42,0.35); background: rgba(196,133,42,0.07); }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 1.15rem 1.5rem; font-size: 1rem; font-weight: 600; color: var(--cream); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-family: 'DM Mono', monospace; font-size: 1.3rem; color: var(--amber); transition: transform 0.2s; line-height: 1; }
+    .faq-item[open] summary::after { content: '−'; transform: rotate(0deg); }
+    .faq-item summary:hover { color: var(--amber-lt); }
+    .faq-answer { padding: 0 1.5rem 1.25rem; font-size: 0.925rem; line-height: 1.7; color: var(--smoke); }
+    .faq-answer a { color: var(--amber); }
     .other-services { margin-top: 6rem; }
     .other-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
     .other-card { background: rgba(196,133,42,0.04); border: 1px solid rgba(196,133,42,0.12); border-radius: 6px; padding: 1.25rem; text-decoration: none; display: block; transition: border-color 0.2s, background 0.2s; }

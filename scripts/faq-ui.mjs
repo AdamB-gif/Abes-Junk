@@ -59,8 +59,10 @@ for (const f of files) {
   const p = path.join(dir, f);
   let s = fs.readFileSync(p, 'utf8');
 
-  if (s.includes('class="faq-block"')) {
-    console.log('skip (already has FAQ UI)', f);
+  const hasHtml = s.includes('class="faq-block"');
+  const hasCss  = s.includes(FAQ_CSS_MARKER);
+  if (hasHtml && hasCss) {
+    console.log('skip (already has FAQ UI + CSS)', f);
     continue;
   }
 
@@ -70,15 +72,20 @@ for (const f of files) {
     continue;
   }
 
-  // 1. Insert CSS block right before "/* Other services */"
-  if (!s.includes(FAQ_CSS_MARKER)) {
-    s = s.replace(/(\s+)\/\* Other services \*\//, `\n${FAQ_CSS}$1/* Other services */`);
+  // 1. Insert CSS block right before the .other-services rule (present on every page)
+  if (!hasCss) {
+    const before = s;
+    s = s.replace(/(\n\s*)\.other-services \{ margin-top: 6rem; \}/,
+      `$1${FAQ_CSS.trimStart()}$1.other-services { margin-top: 6rem; }`);
+    if (s === before) console.log('WARN: CSS marker not matched in', f);
   }
 
-  // 2. Insert visible FAQ HTML between </cta-block closing div> and <div class="other-services">
-  const faqHtml = buildFaqHtml(faqs);
-  s = s.replace(/(\s*)<div class="other-services">/,
-    `\n\n${faqHtml}$1<div class="other-services">`);
+  // 2. Insert visible FAQ HTML between </cta-block> and <div class="other-services">
+  if (!hasHtml) {
+    const faqHtml = buildFaqHtml(faqs);
+    s = s.replace(/(\s*)<div class="other-services">/,
+      `\n\n${faqHtml}$1<div class="other-services">`);
+  }
 
   fs.writeFileSync(p, s);
   console.log('updated', f, `(${faqs.length} FAQs)`);
