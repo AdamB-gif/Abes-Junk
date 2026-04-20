@@ -14,7 +14,7 @@ const data = {
     breadcrumb: 'Junk Removal',
     title: "Junk Removal in Pasco County, FL | Abe's Junk Solutions",
     desc: "Same-day junk removal in Pasco County, FL. Household clutter, garage, attic, electronics & more. Free on-site quote. Call (727) 810-4816.",
-    ogDesc: "From one awkward item to full property clear-outs in Pasco County, FL. Same-day service, free quote. Call (727) 810-4816.",
+    ogDesc: "From one awkward item to full property cleanouts in Pasco County, FL. Same-day service, free quote. Call (727) 810-4816.",
     serviceType: 'Service',
     serviceDesc: "Full-service junk removal across Pasco County, FL. We haul household clutter, garage overflow, attic & basement junk, electronics, and mixed debris.",
     faqs: [
@@ -43,8 +43,8 @@ const data = {
     name: 'Commercial Cleanouts',
     breadcrumb: 'Commercial Cleanouts',
     title: "Commercial Cleanouts in Pasco County, FL | Abe's Junk Solutions",
-    desc: "Commercial cleanouts in Pasco County, FL. Office liquidations, retail clear-outs, foreclosures. Off-hours work available. Call (727) 810-4816.",
-    ogDesc: "Office liquidations, retail clear-outs, and foreclosure cleanouts across Pasco County, FL. Off-hours available. Call (727) 810-4816.",
+    desc: "Commercial cleanouts in Pasco County, FL. Office liquidations, retail cleanouts, foreclosures. Off-hours work available. Call (727) 810-4816.",
+    ogDesc: "Office liquidations, retail cleanouts, and foreclosure cleanouts across Pasco County, FL. Off-hours available. Call (727) 810-4816.",
     serviceType: 'Service',
     serviceDesc: "Commercial cleanout service in Pasco County, FL for offices, retail spaces, warehouses, and foreclosed properties — with off-hours scheduling available.",
     faqs: [
