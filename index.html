@@ -9,6 +9,10 @@
   <link rel="canonical" href="https://abesjunksolutions.com/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#07090A" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Abe's Junk Solutions" />
@@ -75,7 +79,11 @@
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Furniture Removal",   "url": "https://abesjunksolutions.com/services/furniture-removal" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construction Debris", "url": "https://abesjunksolutions.com/services/construction-debris" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Yard & Outdoor Waste","url": "https://abesjunksolutions.com/services/yard-waste" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Donation & Recycling","url": "https://abesjunksolutions.com/services/donation-recycling" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Donation & Recycling","url": "https://abesjunksolutions.com/services/donation-recycling" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Demolition Services","url": "https://abesjunksolutions.com/services/demolition-services" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency & Storm Cleanup","url": "https://abesjunksolutions.com/services/emergency-storm-cleanup" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HOA Violation Cleanup","url": "https://abesjunksolutions.com/services/hoa-violation-cleanup" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agent & Investor Partner Program","url": "https://abesjunksolutions.com/services/agent-investor-program" } }
       ]
     }
   }
@@ -1282,6 +1290,14 @@
       .areas-grid { grid-template-columns: 1fr; }
     }
 
+    /* Partner program grid responsive */
+    @media (max-width: 900px) {
+      #partners .partner-quad { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 540px) {
+      #partners .partner-quad { grid-template-columns: 1fr !important; }
+    }
+
     /* Scroll reveal */
     .reveal {
       opacity: 0;
@@ -1558,6 +1574,42 @@
           <div class="service-arrow">→</div>
         </a>
 
+        <a class="service-card" href="/services/demolition-services">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Demolition Services</h3>
+          <p>Sheds, decks, hot tubs, drywall — we tear it down and haul it away in one visit. No double-booking a demo crew and a hauler.</p>
+          <div class="service-arrow">→</div>
+        </a>
+
+        <a class="service-card" href="/services/emergency-storm-cleanup">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Emergency &amp; Storm Cleanup</h3>
+          <p>Same-day response for storm debris, downed fences, flood-damaged items, and urgent property clearance across Pasco County.</p>
+          <div class="service-arrow">→</div>
+        </a>
+
+        <a class="service-card" href="/services/hoa-violation-cleanup">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>HOA Violation Cleanup</h3>
+          <p>Got a violation notice? We clear what the HOA flagged before your deadline — no judgment, free quote, same-day available.</p>
+          <div class="service-arrow">→</div>
+        </a>
+
+        <a class="service-card" href="/services/agent-investor-program">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>Agent &amp; Investor Program</h3>
+          <p>Priority scheduling, first-time discount, and volume pricing for agents, investors, property managers, and contractors.</p>
+          <div class="service-arrow">→</div>
+        </a>
+
       </div>
     </div>
   </section>
@@ -1626,6 +1678,54 @@
             <img src="brand_assets/abes-logo.jpg" alt="Abe's Junk Solutions" />
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PARTNER PROGRAM ═══════════════ -->
+  <section class="section" id="partners" style="background:rgba(196,133,42,0.03);border-top:1px solid rgba(196,133,42,0.08);border-bottom:1px solid rgba(196,133,42,0.08);">
+    <div class="section-inner">
+      <div class="reveal" style="max-width:680px;margin-bottom:3.5rem;">
+        <div class="section-tag">For Professionals</div>
+        <h2 class="section-heading">Built for the Pros Who Keep Pasco Moving.</h2>
+        <p class="section-sub">Real estate agents, investors, property managers, and contractors get priority scheduling, volume pricing, and a direct line — no call center, no runaround. First-time partner discount on your first job.</p>
+      </div>
+      <div class="reveal partner-quad" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(196,133,42,0.1);border:1px solid rgba(196,133,42,0.1);border-radius:8px;overflow:hidden;margin-bottom:3rem;">
+        <div style="background:rgba(7,9,10,0.95);padding:1.75rem 1.5rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(196,133,42,0.12);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:1rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h4 style="font-size:0.9rem;font-weight:700;color:var(--cream);margin-bottom:0.4rem;">Real Estate Agents</h4>
+          <p style="font-size:0.78rem;line-height:1.6;color:var(--smoke);">Pre-listing cleanouts and estate clearing coordinated around showing schedules and closing dates.</p>
+        </div>
+        <div style="background:rgba(7,9,10,0.95);padding:1.75rem 1.5rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(196,133,42,0.12);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:1rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h4 style="font-size:0.9rem;font-weight:700;color:var(--cream);margin-bottom:0.4rem;">Fix &amp; Flip Investors</h4>
+          <p style="font-size:0.78rem;line-height:1.6;color:var(--smoke);">Full gut-outs to post-reno debris hauls. We move fast so your rehab timeline stays on track.</p>
+        </div>
+        <div style="background:rgba(7,9,10,0.95);padding:1.75rem 1.5rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(196,133,42,0.12);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:1rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h4 style="font-size:0.9rem;font-weight:700;color:var(--cream);margin-bottom:0.4rem;">Property Managers</h4>
+          <p style="font-size:0.78rem;line-height:1.6;color:var(--smoke);">Tenant move-outs, eviction cleanouts, and ongoing property maintenance — one call handles it.</p>
+        </div>
+        <div style="background:rgba(7,9,10,0.95);padding:1.75rem 1.5rem;">
+          <div style="width:40px;height:40px;border-radius:8px;background:rgba(196,133,42,0.12);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:1rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h4 style="font-size:0.9rem;font-weight:700;color:var(--cream);margin-bottom:0.4rem;">General Contractors</h4>
+          <p style="font-size:0.78rem;line-height:1.6;color:var(--smoke);">Post-demo debris, construction waste, and job site clearing. Recurring contracts available.</p>
+        </div>
+      </div>
+      <div class="reveal" style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+        <a href="/services/agent-investor-program" class="btn-primary" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.875rem 2rem;background:var(--amber);color:var(--void);font-weight:600;font-size:0.95rem;border-radius:4px;text-decoration:none;box-shadow:0 4px 24px rgba(196,133,42,0.3);">
+          Learn About the Program
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:7278104816" style="font-size:0.9rem;color:var(--smoke);text-decoration:none;font-weight:500;">or call <span style="color:var(--cream);">(727) 810-4816</span> and mention the partner program</a>
       </div>
     </div>
   </section>
@@ -1755,6 +1855,10 @@
               <option>Furniture Removal</option>
               <option>Construction Debris</option>
               <option>Yard &amp; Outdoor Waste</option>
+              <option>Demolition Services</option>
+              <option>Emergency / Storm Cleanup</option>
+              <option>HOA Violation Cleanup</option>
+              <option>Agent &amp; Investor Partner Program</option>
               <option>Donation &amp; Recycling</option>
               <option>Other / Multiple</option>
             </select>
@@ -1855,19 +1959,21 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a href="#services">Junk Removal</a></li>
-            <li><a href="#services">Estate Cleanouts</a></li>
-            <li><a href="#services">Commercial Cleanouts</a></li>
-            <li><a href="#services">Appliance Removal</a></li>
-            <li><a href="#services">Furniture Removal</a></li>
-            <li><a href="#services">Construction Debris</a></li>
-            <li><a href="#services">Yard Waste</a></li>
+            <li><a href="/services/junk-removal">Junk Removal</a></li>
+            <li><a href="/services/estate-cleanouts">Estate Cleanouts</a></li>
+            <li><a href="/services/commercial-cleanouts">Commercial Cleanouts</a></li>
+            <li><a href="/services/demolition-services">Demolition Services</a></li>
+            <li><a href="/services/emergency-storm-cleanup">Emergency &amp; Storm Cleanup</a></li>
+            <li><a href="/services/hoa-violation-cleanup">HOA Violation Cleanup</a></li>
+            <li><a href="/services/construction-debris">Construction Debris</a></li>
+            <li><a href="/services/yard-waste">Yard Waste</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
             <li><a href="#why">About Abe's</a></li>
+            <li><a href="/services/agent-investor-program">Partner Program</a></li>
             <li><a href="#areas">Service Areas</a></li>
             <li><a href="#contact">Get a Free Quote</a></li>
           </ul>
