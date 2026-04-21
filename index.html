@@ -359,6 +359,44 @@
       color: var(--amber);
     }
 
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--smoke);
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      max-width: none;
+    }
+    .hero-tagline em {
+      font-style: normal;
+      color: var(--amber);
+    }
+    .hero-rotate-container {
+      display: inline-grid;
+    }
+    .hero-rotate-word {
+      grid-area: 1 / 1;
+      color: var(--amber);
+      font-style: italic;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      white-space: nowrap;
+      will-change: opacity, transform;
+    }
+    .hero-rotate-word.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hero-rotate-word.exiting {
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
     .hero p {
       font-size: 1.05rem;
       line-height: 1.75;
@@ -1288,6 +1326,7 @@
     @media (max-width: 480px) {
       .services-grid { grid-template-columns: 1fr; }
       .areas-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
     }
 
     /* Partner program grid responsive */
@@ -1316,7 +1355,7 @@
   <nav>
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="brand_assets/abes-logo.jpg" alt="Abe's Junk Solutions" />
+        <img src="brand_assets/abes-logo.jpg" alt="Abe's Junk Solutions" width="48" height="48" />
         <div class="nav-wordmark">
           Abe's Junk Solutions
           <span>Locally Owned · Licensed &amp; Insured</span>
@@ -1359,7 +1398,8 @@
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-tag">Pasco County, FL — Licensed &amp; Insured</div>
-        <h1>We Haul.<br/><em>You Breathe.</em></h1>
+        <h1>Pasco County's<br/><span class="hero-rotate-container" aria-label="Junk Removal"><span class="hero-rotate-word">Junk Removal</span><span class="hero-rotate-word">Estate Cleanouts</span><span class="hero-rotate-word">Appliance Removal</span><span class="hero-rotate-word">Same-Day Hauling</span><span class="hero-rotate-word">Construction Debris</span></span></h1>
+        <p class="hero-tagline">We Haul. <em>You Breathe.</em></p>
         <p>
           From full estate cleanouts to single item pickups — Abe's Junk Solutions handles every job with speed, care, and a commitment to responsible disposal.
         </p>
@@ -1388,7 +1428,7 @@
         <div class="hero-logo-wrap">
           <div class="hero-logo-glow"></div>
           <div class="hero-logo-ring"></div>
-          <img src="brand_assets/abes-logo.jpg" alt="Abe's Junk Solutions" class="hero-logo-img" />
+          <img src="brand_assets/abes-logo.jpg" alt="Abe's Junk Solutions" class="hero-logo-img" width="320" height="320" />
         </div>
       </div>
     </div>
@@ -1675,7 +1715,7 @@
             <div class="why-ring why-ring-1"></div>
             <div class="why-ring why-ring-2"></div>
             <div class="why-ring why-ring-3"></div>
-            <img src="brand_assets/abes-logo.jpg" alt="Abe's Junk Solutions" />
+            <img src="brand_assets/abes-logo.jpg" alt="Abe's Junk Solutions" width="260" height="260" />
           </div>
         </div>
       </div>
@@ -1953,7 +1993,7 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="brand_assets/abes-logo.jpg" alt="Abe's Junk Solutions" />
+          <img src="brand_assets/abes-logo.jpg" alt="Abe's Junk Solutions" width="60" height="60" />
           <p>A locally owned junk removal company built on honest work, fair prices, and respect for your space and community.</p>
         </div>
         <div class="footer-col">
@@ -2025,6 +2065,22 @@
       });
     }, { threshold: 0.08 });
     revealEls.forEach(el => observer.observe(el));
+
+    // ── Hero rotating words ──
+    (function() {
+      var words = document.querySelectorAll('.hero-rotate-word');
+      if (!words.length) return;
+      var current = 0;
+      words[0].classList.add('active');
+      setInterval(function() {
+        var prev = current;
+        current = (current + 1) % words.length;
+        words[prev].classList.remove('active');
+        words[prev].classList.add('exiting');
+        setTimeout(function() { words[prev].classList.remove('exiting'); }, 400);
+        words[current].classList.add('active');
+      }, 2500);
+    })();
 
     // ── Nav bg on scroll ──
     window.addEventListener('scroll', () => {
